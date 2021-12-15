@@ -12,9 +12,15 @@
     <div class="goods-list">
       <div class="goods-list-items" v-for="(item, index) in showlist" @click="goodsClick(item)">
           <el-image :src="item.coverImg" lazy></el-image>
+<<<<<<< HEAD
           <div class="maskimg"><img :src="item.coverModel"></div>
         <p>{{item.name}}</p>
         <p>¥{{item.price}}</p>
+=======
+          <div class="maskimg"><img :src="item.coverModelImg"></div>
+        <p>{{item.name}}</p>
+        <p>{{item.price}}</p>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
       </div>
     </div>  
     <!-- 数据的分页按钮 -->
@@ -65,6 +71,7 @@ export default {
     btnclick(e){
       this.selectchoice = e
       if(e == 'newToOld'){ 
+<<<<<<< HEAD
         for(let i = 0; i<this.goodsList.length - 1; i++){
           for(let j = 0;j<this.goodsList.length - i - 1; j++){
             let a = this.goodsList[j].shelfTime
@@ -88,12 +95,21 @@ export default {
             }
           }
         }
+=======
+        
+      }else if(e == 'oldToNew'){
+
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
       }else if(e == 'priceDown'){
         for(let i = 0; i<this.goodsList.length - 1; i++){
           for(let j = 0;j<this.goodsList.length - i - 1; j++){
             let a = this.goodsList[j].price
             let b = this.goodsList[j+1].price
+<<<<<<< HEAD
             if(a < b){
+=======
+            if(parseInt(a.substring(1)) < parseInt(b.substring(1))){
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
               let change = this.goodsList[j+1]
               this.goodsList[j+1] = this.goodsList[j]
               this.goodsList[j] = change
@@ -105,7 +121,11 @@ export default {
           for(let j = 0;j<this.goodsList.length - i - 1; j++){
             let a = this.goodsList[j].price
             let b = this.goodsList[j+1].price
+<<<<<<< HEAD
             if(a > b){
+=======
+            if(parseInt(a.substring(1)) > parseInt(b.substring(1))){
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
               let change = this.goodsList[j+1]
               this.goodsList[j+1] = this.goodsList[j]
               this.goodsList[j] = change
@@ -145,6 +165,16 @@ export default {
       this.$router.push("/onelinestore/goodsdetail/" + item.id);
     },
 
+<<<<<<< HEAD
+=======
+    // 设置img的url
+    setimgurl(){
+      for(let i = 0; i<this.goodsList.length; i++){
+        this.goodsList[i].coverImg = require('../../assets/' + this.goodsList[i].coverImg)
+        this.goodsList[i].coverModelImg = require('../../assets/' + this.goodsList[i].coverModelImg)
+      } 
+    }
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   },
 
   created() {
@@ -157,6 +187,13 @@ export default {
     }
     this.total = this.goodsList.length
     this.showlist = this.totallist[0]
+<<<<<<< HEAD
+=======
+
+    // 设置img的url
+    this.setimgurl()
+    
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   },
 
 

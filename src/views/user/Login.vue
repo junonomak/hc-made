@@ -7,11 +7,19 @@
       <el-form :model="form" status-icon ref="form" class="login-form">
         <el-form-item prop="userName">
           <p>请输入用户名:</p>
+<<<<<<< HEAD
           <el-input type="text" v-model="form.username"></el-input>
         </el-form-item>
         <el-form-item prop="pass">
           <p>请输入密码:</p>
           <el-input type="password" v-model="form.password" autocomplete="off"></el-input>
+=======
+          <el-input type="text" v-model="form.userName"></el-input>
+        </el-form-item>
+        <el-form-item prop="pass">
+          <p>请输入密码:</p>
+          <el-input type="password" v-model="form.pass" autocomplete="off"></el-input>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         </el-form-item>
         <el-form-item style="margin-top: 40px;">
           <el-button type="primary" @click="submitForm('form')">提交</el-button>
@@ -24,15 +32,23 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import {getuseraccount} from '../../network/getuser'
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 import ogBar from '../../components/common/ogBar.vue'
 
 export default {
   data() {
     return {
       form: {
+<<<<<<< HEAD
         username: '',
         password: ''
+=======
+        userName: '',
+        pass: ''
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
       },
     };
   },
@@ -41,6 +57,7 @@ export default {
     // 表单提交
     // validate对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise
     submitForm(formName) {
+<<<<<<< HEAD
       // console.log(this.form.username);
       this.$refs[formName].validate((valid) => {
         if (valid) {
@@ -57,6 +74,11 @@ export default {
           }
           })
           
+=======
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('submit!');
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         } else {
           console.log('error submit!!');
           return false;

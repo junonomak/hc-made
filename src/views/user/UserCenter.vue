@@ -2,6 +2,7 @@
 <template>
   <div>
     <og-bar></og-bar>
+<<<<<<< HEAD
     <div class="usercenter">   
 
 
@@ -59,10 +60,14 @@
       
         <el-button @click="LoginOut">登出/Log-out</el-button>
     </div>
+=======
+    <h2>aaa我是user</h2>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import {getAddressList, addAddress , deleteAddress} from '../../network/address'
 import {getOrderList} from '../../network/order'
 import {getIdGoodsList} from '../../network/goods'
@@ -70,11 +75,15 @@ import {getIdGoodsList} from '../../network/goods'
 import ogBar from '../../components/common/ogBar.vue'
 import VDistpicker from 'v-distpicker'
 
+=======
+import ogBar from '../../components/common/ogBar.vue'
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 
 export default {
   name: 'UserCenter',
   data () {
     return {
+<<<<<<< HEAD
       dialogFormVisible: false,
       username: '',
       select: {
@@ -87,11 +96,15 @@ export default {
       addressList: [],
       orderList: [],
       orderGoodsList:[]
+=======
+    
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     };
   },
 
   components: {
     ogBar,
+<<<<<<< HEAD
     VDistpicker 
   },
 
@@ -189,11 +202,15 @@ export default {
 
   },
 
+=======
+  }
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 
 }
 
 </script>
 <style scoped>
+<<<<<<< HEAD
 .usercenter{
   width: 70%;
   margin: 50px auto;
@@ -232,4 +249,6 @@ export default {
   margin-bottom: 100px;
 }
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 </style>

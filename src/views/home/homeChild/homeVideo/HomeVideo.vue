@@ -1,7 +1,11 @@
 <!--  -->
 <template>
   <div class="videobox">
+<<<<<<< HEAD
     <video src="http://hcmdpic.oss-cn-shenzhen.aliyuncs.com/hcmdvideo/hwdog.mp4" autoplay muted loop></video>
+=======
+    <video src="../../../../assets/video/hwdog.mp4" autoplay muted loop></video>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     <div class="videotitle">
       <h2>Using traditional</h2>
       <h2>Chinese craftsmanship,</h2>
@@ -41,7 +45,10 @@ export default {
   text-align: center;
   height: 750px;
   width: 100%;
+<<<<<<< HEAD
   margin-bottom: 100px;
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 }
 
 .videobox video{

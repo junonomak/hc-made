@@ -27,13 +27,17 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import {addUser} from '../../network/user.js'
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 import ogBar from '../../components/common/ogBar.vue'
 
 
 export default {
     data() {
+<<<<<<< HEAD
       var validateUsername = (rule, value, callback) => {
         let a = /^[a-zA-Z0-9_-]{3,16}$/
         if (value === '') {
@@ -51,6 +55,11 @@ export default {
         }
         else if (a.test(value) == false) {
           callback(new Error('密码必须包含数字和字母,并且在6~18位之间'));
+=======
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         } else {
           if (this.ruleForm.checkPass !== '') {
             this.$refs.ruleForm.validateField('checkPass');
@@ -76,9 +85,12 @@ export default {
           checkPass: ''
         },
         rules: {
+<<<<<<< HEAD
           userName: [
             { validator: validateUsername, trigger: 'blur' }
           ],
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
           pass: [
             { validator: validatePass, trigger: 'blur' }
           ],
@@ -94,11 +106,16 @@ export default {
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
+<<<<<<< HEAD
             addUser(this.ruleForm)
             alert('注册成功!');
             this.$router.go(-1)
           } else {
             alert('请输入正确的账号和密码!');
+=======
+            alert('submit!');
+          } else {
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
             console.log('error submit!!');
             return false;
           }

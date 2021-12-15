@@ -18,7 +18,11 @@
     <div class="bar-right">
       <el-button @click="UserCenterClick" type="primary" icon="el-icon-user"></el-button>
       <el-button @click="drawer = true" type="primary"  icon="el-icon-search"></el-button>
+<<<<<<< HEAD
       <el-button @click="cartClick" type="primary" icon="el-icon-shopping-cart-2"></el-button>
+=======
+      <el-button type="primary" icon="el-icon-shopping-cart-2"></el-button>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     </div>
     <!-- 搜索框elementui中的drawer做的 -->
     <el-drawer title="SEARCH HAT WHAT YOU WANT" :visible.sync="drawer" direction="ttb">
@@ -57,7 +61,11 @@ export default {
           itemDetail: ['21 A/W', '21 S/S', '20 A/W', '20 S/S'],
           ahref:{
             aName: 'lookbook',
+<<<<<<< HEAD
             aDetail: ['211', '210', '201', '200']
+=======
+            aDetail: ['21aw', '21ss', '20aw', '20ss']
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
           },
         }
       ],
@@ -88,6 +96,7 @@ export default {
 
     // 用户图片跳转
     UserCenterClick(){
+<<<<<<< HEAD
       this.$router.push('/usercenter')
     },
 
@@ -96,6 +105,10 @@ export default {
     }
 
 
+=======
+      this.$router.push('/login')
+    }
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   },
 
   created() {

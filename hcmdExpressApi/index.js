@@ -8,8 +8,11 @@ const cors = require('cors');
 const app = express()
 
 app.use(cors());
+<<<<<<< HEAD
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 
 const connection = mysql.createConnection({
   host: 'localhost', //数据库地址
@@ -25,6 +28,7 @@ app.use(bodyParser.json())
 
 connection.connect()
 
+<<<<<<< HEAD
 // 获取商品列表
 app.get('/getgoodslist', async (req, res) => {
   const goodsList = []
@@ -50,12 +54,19 @@ app.get('/getgoodslist', async (req, res) => {
         }) 
       }
     res.send(goodsList)
+=======
+app.get('/getgoodslist', (req, res) => {
+  connection.query('SELECT * FROM goodsBaseInfo', function(err, result) {
+    try{
+      res.send(JSON.stringify(result , null , '  '))
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     }catch(err) {
       console.log("查询失败");
     }
   })
 })
 
+<<<<<<< HEAD
 // 获取id对应的img图片
 app.get('/getgoodsimglist', (req, res) => {
   const sql_getimg = 'select imgType, GROUP_CONCAT(imgUrl) as imgUrl from goodsimg where id=? group by imgType;'
@@ -266,13 +277,29 @@ app.post('/addgoods', (req, res) => {
 
   // console.log(req.body);
 // 传入goodsbaseinfo数据
+=======
+// 添加数据
+app.post('/addgoods', function(req, res){
+  var sql_baseinfo = 'insert into goodsbaseinfo set shelfTime=?, productYear=?, name=?, price=?, type=?, coverImg=?, coverModel=?, searchType=?'
+  var sql2 = 'insert into goodsimg set id=?, imgType=?,  imgUrl=?'
+  var sql3 = 'insert into goodsimg set id=?, imgType=?,  imgUrl=?'
+  var sql4 = 'insert into goodsimg set id=?, imgType=?,  imgUrl=?'
+  var postId = null
+  var data_baseinfo = [req.body.shelfTime, req.body.productYear, req.body.name, req.body.price, req.body.type, req.body.coverImg, req.body.coverModel, req.body.searchType]
+  var data2 = [req.body.imgList]
+  var data3 = [req.body.sizeList]
+  // console.log(req.body);
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   connection.query(sql_baseinfo, data_baseinfo, function(err, result) {
     try {
       postId = result.insertId
       console.log(result.insertId);
       res.send('传入数据成功');
     } catch (err) {
+<<<<<<< HEAD
       console.log(req.body);
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         console.log('新增数据失败');
         return res.status(500).json({
           error: err.message
@@ -280,6 +307,7 @@ app.post('/addgoods', (req, res) => {
     }
   });
 
+<<<<<<< HEAD
 
   
   // 写入尺码数据
@@ -374,10 +402,16 @@ app.post('/deleteaddress', (req, res) => {
   connection.query('delete from address where username=? and province=? and city=? and area=? and address=?', data_deleteaddress, function(err, result) {
     try{
       console.log('成功删除用户地址!');
+=======
+  connection.query(sql2, data2, function(err, result) {
+    try{
+      
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     }catch(err) {
       return res.status(500).json({
         error: err.message
       })
+<<<<<<< HEAD
     } 
   })
 })
@@ -429,6 +463,12 @@ app.post('/addorder', (req, res) => {
     })
   }
   res.send('aa')
+=======
+    }
+  })
+
+
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 })
 
 // connection.end()

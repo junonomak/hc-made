@@ -1,4 +1,5 @@
 import {request} from "./request"
+<<<<<<< HEAD
 import axios from 'axios'
 
 export function getlookbookList(productYear) {
@@ -24,5 +25,11 @@ export function addLookBooks(url, data){
     .catch(err => {
       reject(err)
     })
+=======
+
+export function getlookbookList() {
+  return request({
+    url: '/lookbookList'
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   })
 }

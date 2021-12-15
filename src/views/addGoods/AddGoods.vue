@@ -5,9 +5,12 @@
     <div class="addGoodsForm">
       <el-form ref="form" :model="form" label-width="80px" label-position="top">
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 选择年份和aw/ss -->
         <el-form-item label="上架时间">
           <el-col :span="11">
@@ -19,25 +22,34 @@
           </el-select>
         </el-form-item>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 输入商品名称 -->
         <el-form-item label="商品名称">
           <el-input v-model="form.name"></el-input>
         </el-form-item>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 输入商品价格 -->
         <el-form-item label="商品价格">
           <el-input v-model="form.price"></el-input>
         </el-form-item>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 选择商品类型 -->
         <el-form-item label="商品类型">
           <el-select v-model="form.type" placeholder="请选择型商品类型">
@@ -50,6 +62,7 @@
           </el-select>
         </el-form-item>
 
+<<<<<<< HEAD
 
       <!-- 输入商品信息 -->
         <el-form-item label="商品信息">
@@ -62,15 +75,20 @@
         </el-form-item>
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 输入搜索相关的关键词 -->
         <el-form-item label="关键词">
           <el-input type="textarea" v-model="form.searchType"></el-input>
         </el-form-item>
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 上传商品的尺码属性 -->
         <el-form-item label="商品的尺码颜色属性">
           <el-input placeholder="请输入添加的商品颜色" v-model="colourInput" class="input-with-select">
@@ -102,6 +120,7 @@
         </el-form-item>
         <el-button @click="zhenghe">整合数据</el-button><br><br>
 
+<<<<<<< HEAD
 
 
 
@@ -109,11 +128,14 @@
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 上传商品图片的点击按钮 -->
       
         <el-button type="text" @click="dialogFormVisible = true">点击此处上传商品图片</el-button>
         <el-dialog title="上传图片" :visible.sync="dialogFormVisible">
 
+<<<<<<< HEAD
           <!-- 上传封面图片 -->
           <el-form-item label="请上传商品封面图片">
             <el-upload
@@ -205,17 +227,84 @@
               :file-list="modelfilelist">
               <el-button size="small" type="primary">点击上传</el-button>
               <div slot="tip" class="el-upload__tip">最多上传10份jpg/png文件，且不超过500kb</div>
+=======
+            <!-- 上传封面图片 -->
+          <el-form-item label="请上传封面图片">
+            <el-upload
+              class="upload-demo"
+              ref="upload"
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="form.fileList"
+              :auto-upload="false">
+              <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+              <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+            </el-upload>
+          </el-form-item>
+
+          <!-- 上传颜色图片 -->
+          <el-form-item label="请上商品颜色图片">
+            <el-upload
+              class="upload-demo"
+              ref="upload"
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="form.coloarFileList"
+              :auto-upload="false">
+              <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+              <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+            </el-upload>
+          </el-form-item>
+
+          <!-- 上传细节图片 -->
+          <el-form-item label="请上商品细节图片">
+            <el-upload
+              class="upload-demo"
+              ref="upload"
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="form.detailFileList"
+              :auto-upload="false">
+              <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+              <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+            </el-upload>
+          </el-form-item>
+
+          <!-- 上传模特图片 -->
+          <el-form-item label="请上商品模特图片">
+            <el-upload
+              class="upload-demo"
+              ref="upload"
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="form.modelFileList"
+              :auto-upload="false">
+              <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+              <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
             </el-upload>
           </el-form-item>
         </el-dialog>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         <!-- 显示上传的图片 -->
         <el-card class="box-card">
           <div slot="header" class="clearfix">
             <span>已经上传好的图片</span>
+<<<<<<< HEAD
           </div>
           <div v-for="item in form.fileList" :key="item.url" class="text item"  style="height: 30px">
             <span>
@@ -232,6 +321,14 @@
 
 
 
+=======
+            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+          </div>
+          <div v-for="o in 4" :key="o" class="text item">
+            {{'列表内容 ' + o }}
+          </div>
+        </el-card>
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 
         <!-- 创建和取消 -->
         <el-form-item>
@@ -249,6 +346,7 @@ import {goodsInfoPost} from '../../network/goodsInfoPost'
 
 import ogBar from '../../components/common/ogBar.vue'
 
+<<<<<<< HEAD
 // 初始化oss上传图片
 const OSS = require('ali-oss');
 const client = new OSS({
@@ -258,6 +356,8 @@ const client = new OSS({
   region: 'oss-cn-shenzhen', // bucket 所在地址，我的是 华北2 北京
 });
 
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 export default {
   name: 'AddGoods',
   data () {
@@ -268,8 +368,11 @@ export default {
       colourInput: '',
       colourList: [],
       size: '',
+<<<<<<< HEAD
       pic_view: false,
       bigPicture: null,
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
       // 需要提交的表单数据
       form: {
         shelfTime: '',
@@ -279,6 +382,7 @@ export default {
         name: '',
         price: '',
         type: '',
+<<<<<<< HEAD
         detailsize: '',
         message: '',
         searchType: '', 
@@ -289,6 +393,17 @@ export default {
       colourfilelist:[],
       detailfilelist: [],
       modelfilelist:[]
+=======
+        searchType: '', 
+        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}],
+        coverImg: 'aaa',
+        coverModel: 'aaaa',
+        coloarFileList: [],
+        detailFileList: [],
+        modelFileList: [],
+        colouSizeCountList: [],
+     }
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     };
   },
 
@@ -297,10 +412,13 @@ export default {
   },
 
   methods: {
+<<<<<<< HEAD
     PictureBig(img) {
       this.pic_view = true
       this.bigPicture = img
     },
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     // 提交按钮
     onSubmit() {
 
@@ -323,7 +441,24 @@ export default {
       console.log(this.form);
 
     },
+<<<<<<< HEAD
     
+=======
+
+
+
+    // element组件的方法,暂时用不上
+    submitUpload() {
+        this.$refs.upload.submit();
+      },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file);
+    },
+
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 
     // 颜色添加按钮
     colourAdd(){
@@ -368,6 +503,7 @@ export default {
           // console.log(this.colouSizeCountList)
       }
       }
+<<<<<<< HEAD
     },
 
 
@@ -585,6 +721,12 @@ export default {
 
   
 
+=======
+    }
+
+},
+
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
 }
 
 </script>

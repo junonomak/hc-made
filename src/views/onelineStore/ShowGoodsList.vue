@@ -30,7 +30,10 @@ export default {
   created() {
     //初始化展示数据不
     this.getGoodsList()
+<<<<<<< HEAD
     
+=======
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   },
 
   methods: {
@@ -41,7 +44,11 @@ export default {
         this.routerName = this.$route.params.routerName
         if(this.routerName == 'allgoods'){
           this.propsgoodsList = this.goodsList
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
         }else if(this.routerName == 'hat'){
           for(let i = 0; i<this.goodsList.length; i++){
             if(this.goodsList[i].type == 'hat'){

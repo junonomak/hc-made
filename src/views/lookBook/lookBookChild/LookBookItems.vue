@@ -6,7 +6,11 @@
       <h2>{{showtitle}}</h2>
       <!-- lookbook图片的展示以及背景阴影和中间的icon -->
       <div class="lookBookDetailItems">
+<<<<<<< HEAD
         <div v-for="item in lookbooklist" class="items" @click="PictureBig(item)">
+=======
+        <div v-for="item in showimg" class="items" @click="PictureBig(item)">
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
           <div class="itemsMask"></div>
           <el-image :src="item" lazy></el-image>
           <i class="el-icon-zoom-in"></i>
@@ -30,10 +34,20 @@ export default {
   data () {
     return {
       routerName: null,
+<<<<<<< HEAD
+=======
+      showname: null,
+      showimg: null,
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
       showtitle: null,
       pic_view: false,
       bigPicture: null,
       lookbooklist:[],
+<<<<<<< HEAD
+=======
+
+      detailItemsImg:[]
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
     };
   },
 
@@ -50,6 +64,7 @@ export default {
 
     // 获取lookbook数据
     getlookbookList(){
+<<<<<<< HEAD
       getlookbookList(this.routerName).then(res =>{
         this.lookbooklist = res.data[0].imgUrl.split(',')   
         let a = res.data[0].productYear.charAt(res.data[0].productYear.length-1)
@@ -62,14 +77,46 @@ export default {
         this.showtitle = '20' + res.data[0].productYear.substring(0,2) + b
         // console.log(this.showtitle);
         // console.log(this.lookbooklist);
+=======
+      getlookbookList().then(res =>{
+        this.lookbooklist = res.data
+      // 设置图片地址
+        for(let i = 0; i<this.lookbooklist.length; i++){
+          for(let j = 0; j<this.lookbooklist[i].detail.src.length; j++){
+            this.lookbooklist[i].detail.src[j] = require('../../../assets/' + this.lookbooklist[i].detail.src[j])
+          }
+        }
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
       })
     },
   },
 
   created() {
     // 初始化数据
+<<<<<<< HEAD
     this.routerName = this.$route.params.routerName
     this.getlookbookList(this.routerName)
+=======
+    this.getlookbookList()
+    this.routerName = this.$route.params.routerName
+    setTimeout(() => {
+      for(let i = 0; i<this.lookbooklist.length; i++){     
+        if(this.lookbooklist[i].detail.name == this.routerName){
+          this.showname = this.lookbooklist[i].detail.name
+          this.showimg = this.lookbooklist[i].detail.src
+          this.showtitle = this.lookbooklist[i].detail.title
+        }
+      }
+    }, 500);
+
+   
+    
+  },
+
+
+  mounted() {
+    
+>>>>>>> 4789e4e8d77cc418c93d02a35f2d7c89d8b0c977
   },
 
 }
